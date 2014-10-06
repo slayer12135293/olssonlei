@@ -1,0 +1,5 @@
+C:\VSprojects\olssonlei\ServiceApi\Service.Entities\bin\Debug\Service.Entities.dll
+C:\VSprojects\olssonlei\ServiceApi\Service.Entities\bin\Debug\Service.Entities.pdb
+C:\VSprojects\olssonlei\ServiceApi\Service.Entities\obj\Debug\Service.Entities.csprojResolveAssemblyReference.cache
+C:\VSprojects\olssonlei\ServiceApi\Service.Entities\obj\Debug\Service.Entities.dll
+C:\VSprojects\olssonlei\ServiceApi\Service.Entities\obj\Debug\Service.Entities.pdb

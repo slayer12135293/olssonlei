@@ -1,0 +1,11 @@
+Enable-Migrations
+
+Enable-Migrations -ContextTypeName IdentityDb -MigrationsDirectory DataContext\IdentityMigrations
+Enable-Migrations -ContextTypeName ProductDb -MigrationsDirectory DataContext\ProductMigrations
+
+
+Add-Migration -ConfigurationTypeName ServiceApi.DataContext.IdentityMigrations.Configuration "InitialCreate"
+Add-Migration -ConfigurationTypeName ServiceApi.DataContext.ProductMigrations.Configuration "InitialCreate"
+
+Update-Database -ConfigurationTypeName ServiceApi.DataContext.IdentityMigrations.Configuration
+Update-Database -ConfigurationTypeName ServiceApi.DataContext.ProductMigrations.Configuration
