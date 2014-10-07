@@ -5,6 +5,9 @@ using System.Net.Http;
 using System.Web.Http;
 using Microsoft.Owin.Security.OAuth;
 using Newtonsoft.Json.Serialization;
+using System.Net.Http.Headers;
+using Newtonsoft.Json;
+using System.Web.Http.ExceptionHandling;
 
 namespace ServiceApi
 {
@@ -25,6 +28,14 @@ namespace ServiceApi
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            var json = config.Formatters.JsonFormatter;
+            var settings = json.SerializerSettings;
+            settings.PreserveReferencesHandling = PreserveReferencesHandling.None;
+             Setup camel casing
+            settings.Formatting = Formatting.Indented;
+            settings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            config.Formatters.Remove(config.Formatters.XmlFormatter);
         }
     }
 }

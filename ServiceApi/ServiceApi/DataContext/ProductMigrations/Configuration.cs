@@ -16,7 +16,10 @@ namespace ServiceApi.DataContext.ProductMigrations
 
         protected override void Seed(ServiceApi.DataContext.ProductDb context)
         {
-            context.Products.AddOrUpdate(x => x.Name, new Product() { Name = "Sakura", ProductCode = "sk0001" }, new Product() { Name = "Cammy", ProductCode = "ca0031" });
+            context.Products.AddOrUpdate(x => x.Name, 
+                new Product() { Name = "Sakura", ProductCode = "sk0001" }, 
+                new Product() { Name = "Cammy", ProductCode = "ca0031" }, 
+                new Product { Name = "Chun Li", ProductCode = "cl022145", Catagory = new ProductCatagory { Id = 1, Name = "CatagoryA" }, Type = new ProductType {Id=1, Name="TypeA" } });
          
         }
     }
